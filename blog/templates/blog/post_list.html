@@ -13,27 +13,13 @@
         <h1><a href="/">Django Girls Blog </a> </h1>
 
     </div>
-    <div>
-        <p>published : 14.06.2014, 12:14</p>
-        <h2> <a href="">Mon premier Post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur molestias neque qui pariatur
-            modi, repellat velit error accusamus iste ad impedit doloribus? Vel explicabo facilis eligendi dolores
-            voluptates eum.</p>
-
-
-
-    </div>
-    <div>
-        <p>published : 14.06.2014, 12:14</p>
-        <h2> <a href="">Mon deuxième Post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur molestias neque qui pariatur
-            modi, repellat velit error accusamus iste ad impedit doloribus? Vel explicabo facilis eligendi dolores
-            voluptates eum.</p>
-
-
-
-    </div>
-
+{% for post in posts %}
+<div>
+  <p>Published : {{ post.published_date}}</p>
+  <h2><a href="">{{ post.title }}</a></h2>
+  <p>{{ post.text| linebreaksbr}}</p>
+</div>
+{% endfor %}
 </body>
 
 
